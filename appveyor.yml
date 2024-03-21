@@ -1,0 +1,17 @@
+   environment:
+     nodejs_version: "14"
+
+   install:
+     - ps: Install-Product node $env:nodejs_version
+
+   build: off
+
+   test_script:
+     - npm install
+     - npm test
+
+   only_commits:
+     files:
+       - src/
+       - test/
+   
